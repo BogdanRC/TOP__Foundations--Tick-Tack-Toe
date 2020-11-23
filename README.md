@@ -4,7 +4,7 @@ TITLE:
 
 VERSION NUMBER: 
 
- 1.0.0
+ 1.0.1
 
 DESCRIPTION: 
 
@@ -16,8 +16,6 @@ PROJECT STATUS:
 
 TO DO: 
 
- - clear up variable names in order to have them be more intuitive
- - implement switch cases rather than if else statements in order to shorten the code
  - add scorekeeping method, first to reach 5 wins is the winner of the game
 
 REQUIREMENTS: 
