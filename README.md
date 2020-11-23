@@ -12,11 +12,11 @@ DESCRIPTION:
 
 PROJECT STATUS: 
 
- IN PROGRESS
+ COMPLETE
 
 TO DO: 
 
- - add scorekeeping method, first to reach 5 wins is the winner of the game
+
 
 REQUIREMENTS: 
 
@@ -36,6 +36,7 @@ WHAT I'VE LEARNED:
  - how scope works for functions
  - how to use switch statements
  - to section big a problem into bite sized pieces in order to make a problem more approachable
+ - use the .includes method to chek if a string contains another string
  
 
 MOTIVATION: 

@@ -12,29 +12,31 @@ gameResult = variable used to store the result of the current game
 
 */
 
-
-
-
-
-
+/*
+results are added outside of any scope so that they
+don't get reset every time we call the function
+*/
 let userScore= "";
 let compScore = "";
 
 
-function computerPlay( userChoice = prompt(`What do you want to play?`)) {
+function computerPlay(userChoice = prompt(`What's your pick?`)) {
 
 
-
+    /* compChoice stored ousite of the function so that
+     it doesn't get reset to 0 every time we iterate
+    */
     let compChoice="";
+    
     compResponse();
 
     function compResponse() {
         let numGenerator = Math.random();
 
-        switch (true) {
-            case numGenerator < 0.34: compChoice += "rock"; break;
-            case numGenerator < 0.76: compChoice += "paper"; break;
-            case numGenerator < 1: compChoice += "scissors"; break;
+        switch (true) { 
+            case numGenerator <= 0.33: compChoice += "rock"; break;
+            case numGenerator <= 0.66: compChoice += "paper"; break;
+            case numGenerator <= 0.99: compChoice += "scissors"; break;
         }
     }
 
@@ -43,7 +45,7 @@ function computerPlay( userChoice = prompt(`What do you want to play?`)) {
 
 
     // switch statements that contain all 7 possible outcomes
-
+    //formated as such to increase readability
     switch(true){
         case (userChoice == compChoice): 
         gameResult += `The computer chose ${compChoice}. It's a draw`; 
@@ -73,21 +75,25 @@ function computerPlay( userChoice = prompt(`What do you want to play?`)) {
             gameResult += `The computer chose ${compChoice}. You win`; 
         break;
     }
+
+
+    // switch statements could be implemented but are not absolutely necessary
     console.log(gameResult);
+    if (gameResult.includes("win")) {
+        ++userScore;
+        console.log(`Your score is: ${userScore} \n The computer's score is: ${compScore}`);
+    }   else if (gameResult.includes("lose")) {
+        ++compScore;
+        console.log(`Your score is: ${userScore} \n The computer's score is: ${compScore}`);
+    }   else if (gameResult.includes("draw")) {
+        console.log (`Your score is: ${userScore} \n The computer's score is: ${compScore}`)
+    }
+
+    
+    if (userScore === 5) {
+        alert(`You won`);
+    }   else if (compScore === 5) {
+        alert(`The computer won`);
+    }
+    
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
